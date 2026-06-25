@@ -37,7 +37,7 @@ def _print_note(note: Note) -> None:
     print(f"  tags     : {', '.join(note.tags) if note.tags else '—'}")
     print(f"  created  : {note.created_at}")
     print(f"  updated  : {note.updated_at}")
-    print(f"  body     :")
+    print("  body     :")
     for line in textwrap.wrap(note.body, width=72):
         print(f"    {line}")
 

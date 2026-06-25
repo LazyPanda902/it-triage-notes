@@ -3,13 +3,12 @@
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 import pytest
 
 from it_triage.cli import build_parser, cmd_add, cmd_delete, cmd_list, cmd_show, cmd_stats, cmd_update, main
-from it_triage.notes import CATEGORIES, SEVERITIES, STATUSES, Note, NoteStore
+from it_triage.notes import Note, NoteStore
 
 
 # ---------------------------------------------------------------------------
@@ -156,7 +155,7 @@ def test_store_ignores_corrupt_lines(tmp_path: Path):
 
 def test_store_creates_parent_dirs(tmp_path: Path):
     db = tmp_path / "deep" / "nested" / "notes.jsonl"
-    store = NoteStore(db)
+    NoteStore(db)
     assert db.exists()
 
 
