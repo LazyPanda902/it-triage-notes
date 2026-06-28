@@ -1,5 +1,11 @@
 # it-triage-notes
 
+<!-- portfolio-card -->
+<p align="center">
+  <img src="docs/assets/project-card.svg" alt="it-triage-notes project card" width="100%" />
+</p>
+<!-- /portfolio-card -->
+
 it-triage-notes is a zero-dependency Python CLI for logging, filtering, updating, and reviewing IT support incidents from the terminal.
 
 It stores support notes in a local JSON Lines journal and helps organize tickets by category, severity, status, and tags. The tool is designed for helpdesk, sysadmin, homelab, and Microsoft 365 support workflows where quick local triage notes are useful.
