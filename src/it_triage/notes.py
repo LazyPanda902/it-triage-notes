@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import uuid
 from dataclasses import asdict, dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Literal
 
@@ -34,7 +34,7 @@ class Note:
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, data: dict) -> "Note":
+    def from_dict(cls, data: dict) -> Note:
         return cls(**data)
 
     def summary_line(self) -> str:
@@ -43,7 +43,7 @@ class Note:
 
 
 def _now() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 class NoteStore:

@@ -7,9 +7,17 @@ from pathlib import Path
 
 import pytest
 
-from it_triage.cli import build_parser, cmd_add, cmd_delete, cmd_list, cmd_show, cmd_stats, cmd_update, main
+from it_triage.cli import (
+    build_parser,
+    cmd_add,
+    cmd_delete,
+    cmd_list,
+    cmd_show,
+    cmd_stats,
+    cmd_update,
+    main,
+)
 from it_triage.notes import Note, NoteStore
-
 
 # ---------------------------------------------------------------------------
 # Fixtures
@@ -285,7 +293,7 @@ def test_parser_invalid_status_exits():
 
 
 def _ns(tmp_path, **kwargs):
-    defaults = dict(db=str(tmp_path / "notes.jsonl"))
+    defaults = {"db": str(tmp_path / "notes.jsonl")}
     defaults.update(kwargs)
     import argparse
     return argparse.Namespace(**defaults)
